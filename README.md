@@ -27,7 +27,8 @@ Import the example json file
 ```
 curl -X POST  -H "Content-Type: application/json" --data @test/kai.json http://localhost:5001/api/tour/
 ```
-Example REST calls
+
+## Example REST calls
 
 ```
 curl http://localhost:5001/api/tour/21396
