@@ -30,7 +30,16 @@ curl -X POST  -H "Content-Type: application/json" --data @test/kai.json http://l
 Example REST calls
 
 ```
+curl http://localhost:5001/api/tour/21396
+
+curl http://localhost:5001/api/7.70537/51.9598/2000000/tours
+
+curl http://localhost:5001/api/7.70537/51.9598/20/tours
+
+curl http://localhost:5001/api/7.70537/51.9598/2000000/jogging/tours
+
 curl http://localhost:5001/api/kai/tours
+
 ```
 
 ## License

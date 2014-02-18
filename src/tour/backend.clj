@@ -168,9 +168,9 @@
   [x y radius sport]
   (let [tours (exec-raw ["select distinct tour_id, sport from waypoint, tour
 	                  where tour.id = waypoint.tour_id and
-	                        tour.sport = 'mtb' and
+	                        tour.sport = ? and
                                 ST_DWithin(Geography(ST_MakePoint(x,y)), 
-                                Geography(ST_MakePoint(?,?)),?);" [x y radius]] :results)] 
+                                Geography(ST_MakePoint(?,?)),?);" [sport x y radius]] :results)] 
   (map #(get-tour (:tour_id %)) tours)))
 
 
