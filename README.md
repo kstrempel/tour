@@ -1,7 +1,7 @@
 # Tour
 
-A Clojure experiment to play with (Liberator)[http://clojure-liberator.github.io/liberator/], (Korma,[http://sqlkorma.com/] (Postgis)[http://postgis.net/], (lein)[http://leiningen.org/] and the beloved (clojure
-[http://clojure.org/]
+A Clojure experiment to play with [Liberator](http://clojure-liberator.github.io/liberator/), [Korma],(http://sqlkorma.com/) [Postgis](http://postgis.net/), [lein](http://leiningen.org/) and the beloved [clojure](http://clojure.org/)
+
 ## Usage
 
 
