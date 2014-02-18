@@ -12,8 +12,8 @@ After restoring change the connection settings in core.clj
 (def db (postgres 
            {:db "tour"
             :user "postgres" 
-            :password "strempel"
-            :host "192.168.0.249"}))
+            :password "<password>"
+            :host "<hostname>"}))
 ```
 
 Start the server with
