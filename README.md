@@ -4,7 +4,7 @@ A Clojure experiment to play with [Liberator](http://clojure-liberator.github.io
 
 ## Usage
 
-First restore the database schema from tour-backup.backup to your postgis database. 
+First restore the database schema from ```tour-backup.backup``` to your postgis database. 
 
 After restoring change the connection settings in core.clj
 
@@ -25,7 +25,7 @@ lein ring server-headless
 Import the example json file
 
 ```
-curl -X POST  -H "Content-Type: application/json" --data @kai.json http://localhost:5001/api/tour/
+curl -X POST  -H "Content-Type: application/json" --data @test/kai.json http://localhost:5001/api/tour/
 ```
 Example REST calls
 
