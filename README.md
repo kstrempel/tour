@@ -1,10 +1,10 @@
-# komoot
+# Tour
 
-A Clojure library designed to ... well, that part is up to you.
-
+A Clojure experiment to play with (Liberator)[http://clojure-liberator.github.io/liberator/], (Korma,[http://sqlkorma.com/] (Postgis)[http://postgis.net/], (lein)[http://leiningen.org/] and the beloved (clojure
+[http://clojure.org/]
 ## Usage
 
-FIXME
+
 
 ## License
 
