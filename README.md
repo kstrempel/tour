@@ -8,11 +8,12 @@ First restore the database schema from tour-backup.backup to your postgis databa
 
 After restoring change the connection settings in core.clj
 
+```
 (defdb db (postgres {:db "tour"
                      		  :user "postgres"
                      		  :password "<password>"
                      		  :host "<yourhost>"}))
-
+```
 
 Start the server with
 
