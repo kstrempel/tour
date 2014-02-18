@@ -44,7 +44,6 @@ curl http://localhost:5001/api/kai/tours
 
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 Kai Strempel
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Licensed under the EPL (see the file epl.html).
