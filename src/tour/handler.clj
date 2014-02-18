@@ -4,7 +4,7 @@
             [ring.adapter.jetty :refer [run-jetty]]      
             [compojure.core :refer [defroutes ANY]]
             [clojure.data.json :as json]
-            [komoot.backend :as b]))
+            [tour.backend :as b]))
 
 (defn value-writer
   "Helper function to transform the timestamps to the correct string"
@@ -13,11 +13,11 @@
    (= (type value) java.sql.Timestamp) (b/date-to-string value)
    :else value))
 
-(defmulti to-komoot 
+(defmulti to-tour 
 ;;  "Multimethod to create the retured json map/list" 
   class)
 
-(defmethod to-komoot 
+(defmethod to-tour
 ;;  "Multimethod to create the retured json map"
   clojure.lang.PersistentHashMap
   [tour]
@@ -27,11 +27,11 @@
       (dissoc :user_id :waypoint)))
 
 
-(defmethod to-komoot 
+(defmethod to-tour
 ;;  "Multimethod to create the retured json list"
   clojure.lang.LazySeq
   [tours]
-  (map #(to-komoot %) tours))
+  (map #(to-tour %) tours))
   
 
 (defresource get-tour 
@@ -41,7 +41,7 @@
   :allowed-methods [:get]
   :handle-ok (fn [_]
                (-> (b/get-tour id)
-                   (to-komoot)
+                   (to-tour)
                    (json/write-str :value-fn value-writer :key-fn name))))
 
 (defresource get-tours-by-username
@@ -51,7 +51,7 @@
   :allowed-methods [:get]
   :handle-ok (fn [_]
                (-> (b/get-tours-by-username username)
-                   (to-komoot)
+                   (to-tour)
                    (json/write-str :value-fn value-writer :key-fn name))))
 
 (defresource get-tours-by-startpoint
@@ -62,7 +62,7 @@
   :allowed-methods [:get]
   :handle-ok (fn [_]
                (-> (b/get-tours-by-startpoint lat long radius)
-                   (to-komoot)
+                   (to-tour)
                    (json/write-str :value-fn value-writer :key-fn name))))
 
 (defresource get-tours-by-startpoint-filtered-by-sport
@@ -73,7 +73,7 @@
   :allowed-methods [:get]
   :handle-ok (fn [_]
                (-> (b/get-tours-by-startpoint-filtered-by-sport lat long radius sport)
-                   (to-komoot )
+                   (to-tour )
                    (json/write-str :value-fn value-writer :key-fn name))))
 
 

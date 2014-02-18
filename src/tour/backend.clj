@@ -2,7 +2,7 @@
   (:require [clojure.data.json :as json]
             [clj-time.format :as f]
             [clj-time.coerce :as c])
-  (:use komoot.core
+  (:use tour.core
         korma.db
         korma.core))
 
@@ -63,7 +63,6 @@
                      :recordSource (:recordSource tour)
                      :sport (:sport tour)
                      :status (:status tour)
-                     :trackSourceDevice (:trackSourceDevice tour)
                      :altDiff (:altDiff tour)
                      :altDown (:altDown tour)
                      :changedAt (:changedAt tour)
